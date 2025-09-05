@@ -11,9 +11,7 @@ Convert a **PNG** image into a **GDSII** cell made of a grid of rectangles on a 
 python3 -m venv .venv && source .venv/bin/activate
 
 # dependencies (gdspy as default)
-pip install gdspy Pillow
-# or, if you keep a requirements file that lists gdspy:
-# pip install -r requirements.txt
+pip install -r requirements.txt
 
 # run
 python3 png2gds.py input.png output.gds
