@@ -33,9 +33,9 @@ Open `output.gds` in KLayout (or any GDS viewer).
 ## Configuration (edit constants in `# png2gds.py`)
 
 ```python
-# Numeric GDS layer/datatype
-LAYER_NUM        = 0
-DATATYPE_NUM     = 0
+# GDS units
+GDS_UNIT_M       = 1e-6        # 1 µm = 1e-6 m
+GDS_PREC_M       = 1e-9        # precision of 1 nm
 
 # Grid parameters
 MAX_CELLS        = 500_000     # safety cap for Nx*Ny
@@ -48,13 +48,17 @@ TARGET_WIDTH_UM  = 3000.0      # final width INCLUDING margins (optional)
 TARGET_HEIGHT_UM = 2000.0      # final height INCLUDING margins (optional)
 MARGIN_UM        = 150.0       # margin on each side [µm]
 
-# Image processing
-RESAMPLE = "nearest"   # "nearest" | "lanczos" | "bilinear"
-FIT_MODE = "contain"  # "contain" | "fit_width" | "fit_height"
-
-# Binarization
+# PNG Binarization
 INVERT           = False       # invert before threshold
 THRESHOLD        = 128         # binarization threshold [0..255]
+
+# Image processing
+RESAMPLE         = "nearest"   # "nearest" | "lanczos" | "bilinear"
+FIT_MODE         = "contain"   # "contain" | "fit_width" | "fit_height"
+
+# Numeric GDS layer/datatype
+LAYER_NUM        = 0
+DATATYPE_NUM     = 0
 ```
 
 ---

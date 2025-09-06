@@ -136,7 +136,7 @@ def _compute_grid_dims_inclusive(
 
     return nx, ny
 
-# ---------------- PNG → GDS (pixel-art) ----------------
+# ---------------- PNG → GDS ----------------
 def png_to_gds(input_path: str, output_path: str):
     cell_um = float(CELL_UM)
     gap_um  = float(GAP_UM)
@@ -163,10 +163,10 @@ def png_to_gds(input_path: str, output_path: str):
     # GDS lib/cell
     if GDSPY:
         lib = gds.GdsLibrary(unit=GDS_UNIT_M, precision=GDS_PREC_M)
-        cell = lib.new_cell("PIXEL_ART")
+        cell = lib.new_cell("LOGO")
     else:
         lib = gds.Library(unit=GDS_UNIT_M, precision=GDS_PREC_M)
-        cell = lib.new_cell("PIXEL_ART")
+        cell = lib.new_cell("LOGO")
 
     rects = []
     side  = float(cell_um)
